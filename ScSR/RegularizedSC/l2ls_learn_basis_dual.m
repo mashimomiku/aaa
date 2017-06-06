@@ -31,9 +31,9 @@ c = l2norm^2;
 trXXt = sum(sum(X.^2));
 
 lb=zeros(size(dual_lambda));
-options = optimset('GradObj','on', 'Hessian','on');
+%options = optimset('Gradobj','on', 'Hessian','on');
 %options = optimset('GradObj','on', 'TolFun', 1e-7);
-options = optimoptions(@fmincon, 'SpecifyObjectiveGradient', true, 'HessianFcn','objective', 'Algorithm','trust-region-reflective');
+options = optimoptions('fmincon', 'SpecifyObjectiveGradient',true, 'HessianApproximation', 'finite-difference', 'SpecifyObjectiveGradient', true, 'HessianFcn','objective', 'Algorithm','trust-region-reflective');
 %options = optimoptions(@fmincon, 'SpecifyObjectiveGradient', true, 'SpecifyConstraintGradient', true, 'HessianFcn','cg', 'SubproblemAlgorithm','cg');
 %options = optimset('GradObj','on', 'Hessian','on', 'TolFun', 1e-7);
 
