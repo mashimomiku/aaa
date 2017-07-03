@@ -31,16 +31,11 @@ c = l2norm^2;
 trXXt = sum(sum(X.^2));
 
 lb=zeros(size(dual_lambda));
-%options = optimset('Gradobj','on', 'Hessian','on');
-%options = optimset('GradObj','on', 'TolFun', 1e-7);
-options = optimoptions('fmincon', 'SpecifyObjectiveGradient',true, 'HessianApproximation', 'finite-difference', 'SpecifyObjectiveGradient', true, 'HessianFcn','objective', 'Algorithm','trust-region-reflective');
-%options = optimoptions(@fmincon, 'SpecifyObjectiveGradient', true, 'SpecifyConstraintGradient', true, 'HessianFcn','cg', 'SubproblemAlgorithm','cg');
-%options = optimset('GradObj','on', 'Hessian','on', 'TolFun', 1e-7);
+% options = optimset('GradObj','on', 'Hessian','on');
+%  options = optimset('GradObj','on', 'Hessian','on', 'TolFun', 1e-7);
+options = optimoptions(@fminunc,'SpecifyObjectiveGradient',true, 'HessianFcn','objective');
 
-
-%[x, fval, ~, ~] = fmincon(@(x) fobj_basis_dual(x, SSt, XSt, X, c, trXXt), dual_lambda, [], [], [], [], lb, [], [], options);
-%[x, fval, exitflag, output] = fmincon(@(x) fobj_basis_dual(x, SSt, XSt, X, c, trXXt), dual_lambda, [], [], [], [], lb, [], [], options);
-[x, fval] = fmincon(@(x) fobj_basis_dual(x, SSt, XSt, X, c, trXXt), dual_lambda, [], [], [], [], lb, [], [], options);
+[x, fval, exitflag, output] = fminunc(@(x) fobj_basis_dual(x, SSt, XSt, X, c, trXXt), dual_lambda, [], [], [], [], lb, [], [], options);
 % output.iterations
 fval_opt = -0.5*N*fval;
 dual_lambda= x;
