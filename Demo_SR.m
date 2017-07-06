@@ -12,7 +12,7 @@
 % For any questions, send email to jyang29@uiuc.edu
 % =========================================================================
 
-clear all; clc;
+%clear all; clc;
 
 % read test image
 im_l = imread('Data/Testing/input.bmp');
@@ -24,7 +24,7 @@ up_scale = 2;                   % scaling factor, depending on the trained dicti
 maxIter = 20;                   % if 0, do not use backprojection
 
 % load dictionary
-load('Dictionary/reg_sc_b512_20170706T163947.mat');
+load('Dictionary/D_1024_0.15_5.mat');
 
 % change color space, work on illuminance only
 im_l_ycbcr = rgb2ycbcr(im_l);

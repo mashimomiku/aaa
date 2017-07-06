@@ -29,7 +29,7 @@ idx = randperm(size(X, 2));
 
 % dictionary training
 %[D] = reg_sparse_coding(X, dict_size, [], 0, lambda, 40);
-[D] = reg_sparse_coding(X, dict_size, [], 0, lambda, 3);
+[D] = reg_sparse_coding(X, dict_size, [], 0, lambda, 1);
 
 Dh = D(1:hDim, :);
 Dl = D(hDim+1:end, :);

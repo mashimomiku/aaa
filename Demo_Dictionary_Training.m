@@ -31,6 +31,6 @@ upscale     = 2;            % upscaling factor
 [Xh, Xl] = patch_pruning(Xh, Xl, 10);
 
 % joint sparse coding 
-[Dh, Dl] = train_coupled_dict(Xh, Xl, dict_size, lambda);
+[Dh, Dl] = train_coupled_dict(Xh, Xl, dict_size, lambda, upscale);
 dict_path = ['Dictionary/D_' num2str(dict_size) '_' num2str(lambda) '_' num2str(patch_size) '.mat' ];
 save(dict_path, 'Dh', 'Dl');
