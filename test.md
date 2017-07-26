@@ -11,8 +11,11 @@
 
 
 2. レナの画像でやると <br>                                                                                                 
-オリジナル <br>                
+オリジナル <br>  
+<img src="https://raw.githubusercontent.com/mashimomiku/ScSR/master/Data/Testing/gnd.bmp">
 今までの超解像 PSNR 34.26               
 <img src="https://raw.githubusercontent.com/mashimomiku/ScSR/master/SR34.267392.bmp">
 ウェーブレット変換を用いた超解像  PSNR 18.92
 <img src="https://raw.githubusercontent.com/mashimomiku/ScSR/master/18.9295.bmp">
+<br>
+と、今のところなっているので直します
