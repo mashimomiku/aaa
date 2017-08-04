@@ -26,6 +26,25 @@
 <br>
 <br>
 <img src="https://raw.githubusercontent.com/mashimomiku/code/master/image/kakudai2.bmp"><img src="https://raw.githubusercontent.com/mashimomiku/code/master/image/kakudai1.bmp">
-![hikaku1](https://raw.githubusercontent.com/mashimomiku/code/master/image/kakudai2.bmp "hikaku1")![hikaku2](https://raw.githubusercontent.com/mashimomiku/code/master/image/kakudai1.bmp" "hikaku2")
+ウェーブレット変換を用いて超解像したものを拡大して見てみても、変なノイズが入っていて線もがたがたしているので解像度が逆に下がっているように見える。<br>
+そこで初めにウェーブレット変換をした時のLL画像を見てみると、
+<img src="https://raw.githubusercontent.com/mashimomiku/code/master/image/LLlena.bmp">
+入力画像の1/2の大きさになってしまうのでかなり小さく、そこでもともと持っている情報を失っている気がしたので、入力画像をバイキュービック法で2倍の大きさにしてからウェーブレット変換し、超解像、逆ウェーブレット変換してから1/2のサイズにしてオリジナル画像とのPSNR値を測ってみた。
+<img src="https://raw.githubusercontent.com/mashimomiku/code/master/image/nonoisewSR2.bmp">
+PSNR値は7.4404→7.4387に下がったが見た目的にはマシになった？
+<img src="https://raw.githubusercontent.com/mashimomiku/code/master/image/kakudai3.bmp">
+<br>
+さらに入力画像を4倍にして試したところ
+<img src="https://raw.githubusercontent.com/mashimomiku/code/master/image/wSR4bai.bmp">
+↑PSNR値は7.4381でほぼ変わらないが、線がだいぶなめらかになっている。
 
-辞書について
+3. まとめ
+結果は,  辞書学習型超解像 > バイキュービック法 >>> ウェーブレット変換を用いた超解像。
+入力画像にノイズをつけて試しても似たような結果になった。ただし今までの超解像だと逆にノイズを強調してしまうためバイキュービック法が一番結果が良かった。
+<br>
+改善点
+*やり方を変える？
+*辞書に学習させる画像を変える
+*ウェーブレット変換でノイズ除去しつつ超解像みたいなことができればいいなって思った
+
+
