@@ -26,6 +26,6 @@
 <br>
 <br>
 <img src="https://raw.githubusercontent.com/mashimomiku/code/master/image/kakudai2.bmp"><img src="https://raw.githubusercontent.com/mashimomiku/code/master/image/kakudai1.bmp">
-
+![hikaku1](https://raw.githubusercontent.com/mashimomiku/code/master/image/kakudai2.bmp "hikaku1")![hikaku2](https://raw.githubusercontent.com/mashimomiku/code/master/image/kakudai1.bmp" "hikaku2")
 
 辞書について
