@@ -7,7 +7,10 @@
 1. ウェーブレット変換を用いた超解像について <br>
 離散ウェーブレット変換でLL(縦横低周波), HL(横高周波、縦低周波), LH(横低周波、縦高周波), HH(縦横高周波) の４つを作る。
 <img src="https://raw.githubusercontent.com/mashimomiku/code/master/image/%E3%82%A6%E3%82%A7%E3%83%BC%E3%83%96%E3%83%AC%E3%83%83%E3%83%88%E5%88%86%E8%A7%A3.png">
-
+４つそれぞれ超解像を行って逆ウェーブレット変換し、高解像度画像を出力する
+<img src="https://raw.githubusercontent.com/mashimomiku/code/master/image/%E5%9B%B3.png">
+<br>
+超解像に使う辞書は110枚の自然画像とそのLL,HL,LH,HH画像を合わせた500枚ほどの画像で学習したものを使った。
 
 
 2. レナの画像でやると <br>
