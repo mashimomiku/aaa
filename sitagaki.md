@@ -19,8 +19,10 @@
 <img src="https://raw.githubusercontent.com/mashimomiku/ScSR/master/Data/Testing/gnd.bmp">
 入力画像（オリジナルの1/2サイズ）    
 <img src="https://raw.githubusercontent.com/mashimomiku/code/master/Data/Testing/input.bmp">
+バイキュービックで拡大　PSNR 30.88
+
 今までの超解像 PSNR 32.39                     
-<img src="https://raw.githubusercontent.com/mashimomiku/ScSR/master/SR34.267392.bmp">
+<img src="https://raw.githubusercontent.com/mashimomiku/code/master/image/nonoiseSR.bmp">
 ウェーブレット変換を用いた超解像  PSNR 7.4396      
 <img src="https://raw.githubusercontent.com/mashimomiku/ScSR/master/18.9295.bmp">xxx
 <br>
