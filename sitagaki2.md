@@ -1,5 +1,5 @@
 週報 =======================================================  
-* 週: 8週(2017/07/28〜08/04)
+* 週: 8週(2017/08/05〜08/17)
 * 学籍番号: 1730097 
 * 氏名: 眞下美紅 <br>
 <br>
@@ -11,11 +11,14 @@
 <img src="https://raw.githubusercontent.com/mashimomiku/code/master/image/%E5%9B%B3.png">
 <br>
 超解像に使う辞書は110枚の自然画像とそのLL,HL,LH,HH画像を合わせた500枚ほどの画像で学習したものを使った。<br><br>
+→やり方をすこしずつ変えてやってみたが、結局bicubic法や今まで使っていた超解像の方法より劣る結果になった。<br>
+→→ので、ノイズを含んだ画像に対して有効か検証した。<br><br>
+
 2. レナの画像でやると <br>
-*ノイズなし1/2サイズにしたレナ画像をもとにもどす (※前回PSNR間違っていたので直してる) <br>
+*ガウスノイズをのせ1/2サイズにしたレナ画像をもとにもどす<br>
 オリジナル <br>  
 <img src="https://raw.githubusercontent.com/mashimomiku/ScSR/master/Data/Testing/gnd.bmp">
-入力画像（オリジナルの1/2サイズ）    
+入力画像  
 <img src="https://raw.githubusercontent.com/mashimomiku/code/master/Data/Testing/input.bmp">
 バイキュービックで拡大　PSNR 30.88
 <img src="https://raw.githubusercontent.com/mashimomiku/code/master/image/bicu30%2C8820.bmp">
