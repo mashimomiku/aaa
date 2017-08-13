@@ -19,28 +19,16 @@
 オリジナル <br>  
 <img src="https://raw.githubusercontent.com/mashimomiku/ScSR/master/Data/Testing/gnd.bmp">
 入力画像  
-<img src="https://raw.githubusercontent.com/mashimomiku/code/master/Data/Testing/input.bmp">
-バイキュービックで拡大　PSNR 30.88
-<img src="https://raw.githubusercontent.com/mashimomiku/code/master/image/bicu30%2C8820.bmp">
-今までの超解像 PSNR 32.39                     
-<img src="https://raw.githubusercontent.com/mashimomiku/code/master/image/nonoiseSR.bmp">
-ウェーブレット変換を用いた超解像  PSNR 7.4396   
-<img src="https://raw.githubusercontent.com/mashimomiku/code/master/image/nonoisewSR.bmp">
+<img src="https://raw.githubusercontent.com/mashimomiku/code/master/image/noise.bmp">
+バイキュービックで拡大　PSNR 21.43
+<img src="https://raw.githubusercontent.com/mashimomiku/code/master/image/bicubic.bmp">
+今までの超解像 PSNR 19.70                     
+<img src="https://raw.githubusercontent.com/mashimomiku/code/master/image/SR.bmp">
 <br>
-<br>
-<img src="https://raw.githubusercontent.com/mashimomiku/code/master/image/kakudai2.bmp"><img src="https://raw.githubusercontent.com/mashimomiku/code/master/image/kakudai1.bmp">
-ウェーブレット変換を用いて超解像したものを拡大して見てみても、変なノイズが入っていて線もがたがたしているので解像度が逆に下がっているように見える(?)<br>
-そこで初めにウェーブレット変換をした時のLL画像を見てみると、
-<img src="https://raw.githubusercontent.com/mashimomiku/code/master/image/LLlena.bmp">
-入力画像の1/2の大きさになってしまうのでかなり小さく、そこでもともと持っている情報を失っている気がしたので、入力画像をバイキュービック法で2倍の大きさにしてからウェーブレット変換し、超解像、逆ウェーブレット変換してから1/2のサイズにしてオリジナル画像とのPSNR値を測ってみた。
-<img src="https://raw.githubusercontent.com/mashimomiku/code/master/image/nonoisewSR2.bmp">
-PSNR値は7.4404→7.4387に下がったが見た目的にはマシになった？
-<img src="https://raw.githubusercontent.com/mashimomiku/code/master/image/kakudai3.bmp">
-<br>
-さらに入力画像を4倍にして試したところ
-<img src="https://raw.githubusercontent.com/mashimomiku/code/master/image/wSR4bai.bmp">
-↑PSNR値は7.4381でほぼ変わらないが、線がだいぶなめらかになっている。<br>
-<br>
+bicubic法にくらべ辞書学習型超解像の結果はPSNR値が高かったが、ノイズを含む画像に対してはノイズもはっきりとさせてしまうためbicubic法の方が結果が良かった。<br>
+これに対しウェーブレット変換を用いてノイズ除去も考慮しながら超解像を行った。<br>
+手法はノイズ除去のためにWabelet Shrinkage法を用いた。
+結果　PSNR 23.08
 3. まとめ<br>
 結果は, 辞書学習型超解像 > バイキュービック法 >>> ウェーブレット変換を用いた超解像。<br>
 入力画像にノイズをつけて試しても似たような結果になった。ただし今までの超解像だと逆にノイズを強調してしまうためバイキュービック法が一番結果が良かった。
